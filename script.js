@@ -13,3 +13,16 @@ const person = {
 };
 // Call the 'greet' method on the 'person' object
 person.greet(); // Outputs: 'Hello, Alice'
+
+/* Arrow Functions:
+   The arrow function inside 'setInterval' inherits 'this' from 'Timer', so it
+   correctly referes to the new 'Timer' object. */
+function Timer() {
+    this.seconds = 0;
+    setInterval(() => {
+        this.seconds++;
+        console.log(this.seconds);
+    }, 1000); // 1000 milliseconds = 1 second, using 'setInterval'.
+}
+new Timer();
+// 'Timer()' will run continuously. 'ctrl + c' to stop.
